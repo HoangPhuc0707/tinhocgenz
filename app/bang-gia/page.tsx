@@ -16,8 +16,8 @@ export default function PricingPage() {
       a: "Bạn có thể thanh toán qua chuyển khoản ngân hàng hoặc ví điện tử (Momo/ZaloPay). Bạn có thể đóng 100% học phí hoặc chia làm 2 đợt đóng đối với khóa học dài hạn."
     },
     {
-      q: "Dịch vụ vệ sinh laptop được bảo hành như thế nào?",
-      a: "Vệ sinh laptop sử dụng keo tản nhiệt cao cấp MX-4/MX-6. Sau khi vệ sinh máy sẽ chạy mát hơn rõ rệt (giảm 10-15 độ). Chúng tôi bảo hành nhiệt độ hoạt động ổn định trong vòng 1 tháng."
+      q: "Tôi có thể yêu cầu cài đặt các phần mềm đặc thù chuyên ngành khác không?",
+      a: "Hoàn toàn được! Bên cạnh các phần mềm thiết kế và Office thông dụng, Thầy giáo GenZ hỗ trợ tìm kiếm, cài đặt và cấu hình tất cả các phần mềm học tập, làm việc đặc thù khác (SPSS, Matlab, Solidworks, Eclipse...) theo đúng yêu cầu cấu hình máy của bạn."
     }
   ];
 

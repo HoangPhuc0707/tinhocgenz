@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Monitor, Cpu, Wrench, Shield, Check } from "lucide-react";
+import { Monitor, Cpu, Palette, Terminal, Check } from "lucide-react";
 import { TechService } from "@/data/mockData";
 
 interface ServiceCardProps {
@@ -15,10 +15,10 @@ export default function ServiceCard({ service, index = 0 }: ServiceCardProps) {
         return <Monitor size={22} className="text-blue-600 group-hover:text-white transition-colors duration-300" />;
       case "cai-office":
         return <Cpu size={22} className="text-cyan-500 group-hover:text-white transition-colors duration-300" />;
-      case "sua-may-tinh":
-        return <Wrench size={22} className="text-indigo-500 group-hover:text-white transition-colors duration-300" />;
-      case "ve-sinh-laptop":
-        return <Shield size={22} className="text-emerald-500 group-hover:text-white transition-colors duration-300" />;
+      case "cai-do-hoa":
+        return <Palette size={22} className="text-indigo-500 group-hover:text-white transition-colors duration-300" />;
+      case "cai-theo-yeu-cau":
+        return <Terminal size={22} className="text-emerald-500 group-hover:text-white transition-colors duration-300" />;
       default:
         return <Monitor size={22} className="text-blue-600 group-hover:text-white transition-colors duration-300" />;
     }

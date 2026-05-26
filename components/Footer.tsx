@@ -89,12 +89,12 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="/dich-vu" className="hover:text-blue-400 smooth-transition text-slate-400 hover:translate-x-1 inline-block">
-                  Sửa chữa máy tính / laptop
+                  Cài đặt phần mềm đồ họa
                 </Link>
               </li>
               <li>
                 <Link href="/dich-vu" className="hover:text-blue-400 smooth-transition text-slate-400 hover:translate-x-1 inline-block">
-                  Vệ sinh, bảo dưỡng laptop
+                  Cài phần mềm theo yêu cầu
                 </Link>
               </li>
             </ul>

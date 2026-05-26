@@ -124,20 +124,20 @@ export const servicesData: TechService[] = [
     features: ["Bao gồm Word, Excel, PowerPoint, Outlook", "Cài đặt bộ font tiếng Việt đầy đủ nhất", "Hỗ trợ trọn đời, không lo bị khóa", "Cài đặt nhanh qua Ultraview/Teamview"]
   },
   {
-    id: "sua-may-tinh",
-    name: "Sửa Chữa Máy Tính / Laptop",
-    price: "từ 200.000đ",
-    priceValue: 200000,
-    description: "Khắc phục triệt để các lỗi phần cứng, phần mềm, máy chạy chậm, đơ lag, nhiễm virus, lỗi màn hình xanh.",
-    features: ["Kiểm tra báo lỗi chính xác tại chỗ", "Thay thế linh kiện chính hãng (SSD, RAM, Pin)", "Bảo hành uy tín từ 3 - 12 tháng", "Hỗ trợ tận nhà hoặc lấy ngay trong ngày"]
+    id: "cai-do-hoa",
+    name: "Cài Đặt Phần Mềm Đồ Họa",
+    price: "từ 80.000đ",
+    priceValue: 80000,
+    description: "Cài đặt trọn bộ phần mềm đồ họa, thiết kế chuyên nghiệp như Photoshop, Illustrator, AutoCAD, Premiere, Lightroom...",
+    features: ["Kích hoạt vĩnh viễn, đầy đủ tính năng", "Hỗ trợ cài đặt từ xa qua UltraView", "Tương thích tốt, chạy mượt mà ổn định", "Đa dạng phiên bản theo cấu hình máy"]
   },
   {
-    id: "ve-sinh-laptop",
-    name: "Vệ Sinh Máy Tính / Laptop",
-    price: "100.000đ",
-    priceValue: 100000,
-    description: "Vệ sinh bụi bẩn bên trong, thay keo tản nhiệt MX-4/MX-6 xịn giúp hạ nhiệt độ CPU, bảo vệ máy khỏi hư hại.",
-    features: ["Vệ sinh sạch sẽ cánh quạt, khe tản nhiệt", "Tra keo tản nhiệt cao cấp nhập khẩu", "Lau sạch bụi bẩn bàn phím, màn hình", "Giúp máy giảm 10-15°C ngay sau khi vệ sinh"]
+    id: "cai-theo-yeu-cau",
+    name: "Cài Phần Mềm Theo Yêu Cầu",
+    price: "từ 50.000đ",
+    priceValue: 50000,
+    description: "Cài đặt các phần mềm học tập, làm việc chuyên ngành khác theo yêu cầu như SPSS, Matlab, Solidworks, các công cụ lập trình...",
+    features: ["Cài đặt và cấu hình hoàn chỉnh", "Hỗ trợ kiểm tra lỗi trước khi dùng", "UltraView nhanh gọn, không cần ra tiệm", "Tư vấn phần mềm tối ưu cho cấu hình"]
   }
 ];
 
@@ -164,9 +164,9 @@ export const testimonialsData: Testimonial[] = [
     id: "testi-3",
     name: "Phạm Thu Thủy",
     role: "Kế toán viên tự do",
-    courseOrService: "Khách hàng Vệ sinh laptop & Cài Win",
+    courseOrService: "Khách hàng Cài Win & Phần mềm đồ họa",
     avatarUrl: "/avatars/avatar-3.png",
-    content: "Dịch vụ nhanh gọn, uy tín, thầy giáo hỗ trợ rất nhiệt tình. Máy tính của mình bị chậm đơ suốt 2 tháng nay, sau khi được cài lại Windows và vệ sinh tra keo tản nhiệt thì chạy nhanh như máy mới mua!",
+    content: "Dịch vụ nhanh gọn, uy tín, thầy giáo hỗ trợ rất nhiệt tình. Máy tính của mình bị chậm đơ suốt 2 tháng nay, sau khi được cài lại Windows và cài đặt thêm trọn bộ phần mềm đồ họa thiết kế thì máy chạy cực nhanh, mượt mà!",
     rating: 5
   },
   {

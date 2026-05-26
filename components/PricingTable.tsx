@@ -101,12 +101,12 @@ export default function PricingTable() {
               </tr>
             ))}
 
-            {/* --- SECTION 2: DỊCH VỤ CÀI ĐẶT & SỬA CHỮA --- */}
+            {/* --- SECTION 2: DỊCH VỤ CÀI ĐẶT HỆ ĐIỀU HÀNH & PHẦN MỀM --- */}
             <tr className="bg-slate-50/50">
               <td colSpan={4} className="py-4 px-6 font-black text-slate-800 text-xs tracking-wider uppercase">
                 <div className="flex items-center gap-2 font-display">
                   <Wrench size={13} className="text-blue-500" />
-                  DỊCH VỤ CÀI ĐẶT - VỆ SINH - BẢO DƯỠNG MÁY TÍNH
+                  DỊCH VỤ CÀI ĐẶT HỆ ĐIỀU HÀNH & PHẦN MỀM CHUYÊN NGHIỆP
                 </div>
               </td>
             </tr>
@@ -125,7 +125,7 @@ export default function PricingTable() {
                 
                 {/* Features (Short notes) */}
                 <td className="py-5 px-6 text-slate-500 text-xs font-semibold">
-                  {service.features[0]} & {service.features[1].toLowerCase()}
+                  {service.features[0]}{service.features[1] ? ` & ${service.features[1].toLowerCase()}` : ""}
                 </td>
                 
                 {/* Action Link */}

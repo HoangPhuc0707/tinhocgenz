@@ -18,7 +18,7 @@ export default function ServicesPage() {
             Cài Đặt & Sửa Chữa Máy Tính Uy Tín
           </h1>
           <p className="text-slate-500 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
-            Dịch vụ kỹ thuật máy tính chuyên nghiệp, nhanh chóng. Hỗ trợ cài đặt hệ điều hành Windows, cài đặt Office bản quyền, vệ sinh máy tính lấy ngay và sửa chữa khắc phục sự cố phần cứng phần mềm tận tâm.
+            Dịch vụ kỹ thuật máy tính chuyên nghiệp, nhanh chóng. Hỗ trợ cài đặt hệ điều hành Windows, cài đặt Office bản quyền, cài đặt trọn bộ phần mềm đồ họa thiết kế và các phần mềm chuyên ngành khác theo yêu cầu từ xa cực kỳ tiện lợi.
           </p>
         </div>
       </section>
@@ -66,7 +66,7 @@ export default function ServicesPage() {
                 </div>
                 <h3 className="font-black text-slate-900 text-sm leading-snug">Cam kết bảo mật dữ liệu</h3>
                 <p className="text-slate-500 text-xs sm:text-sm leading-relaxed">
-                  Đảm bảo an toàn dữ liệu cá nhân của khách hàng tuyệt đối 100% trong suốt quá trình cài đặt, sửa chữa và vệ sinh máy.
+                  Đảm bảo an toàn dữ liệu cá nhân của khách hàng tuyệt đối 100% trong suốt quá trình cài đặt phần mềm và hỗ trợ kỹ thuật.
                 </p>
               </div>
             </div>
@@ -77,9 +77,9 @@ export default function ServicesPage() {
                 <div className="w-12 h-12 rounded-2xl bg-white border border-slate-100 text-indigo-500 flex items-center justify-center shadow-sm group-hover:scale-110 group-hover:bg-indigo-50 smooth-transition">
                   <Cpu size={20} />
                 </div>
-                <h3 className="font-black text-slate-900 text-sm leading-snug">Linh kiện chính hãng</h3>
+                <h3 className="font-black text-slate-900 text-sm leading-snug">Kích hoạt an toàn & Trọn đời</h3>
                 <p className="text-slate-500 text-xs sm:text-sm leading-relaxed">
-                  Toàn bộ linh kiện thay thế (SSD, RAM, sạc, keo tản nhiệt...) đều chính hãng nhập khẩu, bảo hành rõ ràng từ 3-12 tháng.
+                  Toàn bộ hệ điều hành, bộ Office và các phần mềm chuyên ngành đều được cài đặt, kích hoạt an toàn, không virus/mã độc, đảm bảo chạy cực kỳ ổn định.
                 </p>
               </div>
             </div>
