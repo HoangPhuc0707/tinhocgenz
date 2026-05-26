@@ -10,12 +10,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           {/* Column 1: Brand Intro */}
           <div className="flex flex-col gap-4">
-            <Link href="/" className="flex items-center gap-2 group w-max bg-white/95 p-4 rounded-2xl border border-slate-700/50 shadow-md hover:scale-105 smooth-transition">
-              <img 
-                src="/logo-wide.png" 
-                alt="TinhocGenZ Logo" 
-                className="h-28 w-auto" 
-              />
+            <Link href="/" className="group w-max">
+              <div className="bg-white/[0.08] hover:bg-white/[0.12] border border-white/[0.12] hover:border-white/20 rounded-2xl px-5 py-3 smooth-transition">
+                <img 
+                  src="/logo-wide.png" 
+                  alt="TinhocGenZ Logo" 
+                  className="h-16 w-auto group-hover:scale-[1.02] transition-all duration-500 ease-out" 
+                />
+              </div>
             </Link>
             <p className="text-slate-400 text-sm leading-relaxed mt-2">
               Khóa học Tin học văn phòng thực chiến theo phong cách hiện đại. Học nhanh - Thực hành ngay - Làm được việc luôn. Đột phá hiệu suất công việc cùng chuyên gia GenZ.

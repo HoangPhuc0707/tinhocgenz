@@ -25,7 +25,7 @@ export default function PricingPage() {
     <div className="flex flex-col w-full bg-slate-50/30">
       
       {/* 1. Header Banner */}
-      <section className="bg-white pt-24 pb-16 border-b border-slate-100 relative overflow-hidden tech-grid-pattern">
+      <section className="bg-white pt-20 pb-14 border-b border-slate-100 relative overflow-hidden tech-grid-pattern">
         <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[450px] h-[450px] bg-gradient-to-tr from-blue-500/10 to-cyan-500/10 rounded-full blur-[100px] pointer-events-none" />
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-4">
@@ -42,14 +42,14 @@ export default function PricingPage() {
       </section>
 
       {/* 2. Main Table Section */}
-      <section className="py-24 sm:py-32 bg-[#f8fafc]">
+      <section className="py-16 sm:py-20 bg-[#f8fafc]">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <PricingTable />
         </div>
       </section>
 
       {/* 3. FAQ Section */}
-      <section className="py-24 bg-white border-t border-slate-100/60 relative">
+      <section className="py-16 bg-white border-t border-slate-100/60 relative">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="text-center mb-20 space-y-3">

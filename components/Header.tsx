@@ -44,12 +44,14 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Logo and Brand */}
-          <Link href="/" className="flex items-center gap-2 group shrink-0">
-            <img 
-              src="/logo-wide.png" 
-              alt="TinhocGenZ Logo" 
-              className="h-16 md:h-18 w-auto group-hover:scale-[1.02] transition-all duration-500 ease-out" 
-            />
+          <Link href="/" className="group shrink-0">
+            <div className="bg-white/80 hover:bg-white border border-slate-200/60 hover:border-slate-300/80 rounded-xl px-3 py-1.5 smooth-transition">
+              <img 
+                src="/logo-wide.png" 
+                alt="TinhocGenZ Logo" 
+                className="h-9 md:h-10 w-auto group-hover:scale-[1.02] transition-all duration-500 ease-out" 
+              />
+            </div>
           </Link>
 
           {/* Desktop Navigation */}

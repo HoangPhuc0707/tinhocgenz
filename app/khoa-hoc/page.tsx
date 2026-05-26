@@ -7,7 +7,7 @@ export default function CoursesPage() {
     <div className="flex flex-col w-full bg-slate-50/30">
       
       {/* 1. Header Banner */}
-      <section className="bg-white pt-24 pb-16 border-b border-slate-100 relative overflow-hidden tech-grid-pattern">
+      <section className="bg-white pt-20 pb-14 border-b border-slate-100 relative overflow-hidden tech-grid-pattern">
         <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[450px] h-[450px] bg-gradient-to-tr from-blue-500/10 to-cyan-500/10 rounded-full blur-[100px] pointer-events-none" />
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-4">
@@ -24,9 +24,9 @@ export default function CoursesPage() {
       </section>
 
       {/* 2. Courses Grid Section */}
-      <section className="py-24 sm:py-32 bg-[#f8fafc]">
+      <section className="py-16 sm:py-20 bg-[#f8fafc]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 xl:gap-8">
             {coursesData.map((course, index) => (
               <CourseCard key={course.id} course={course} index={index} />
             ))}
@@ -35,9 +35,9 @@ export default function CoursesPage() {
       </section>
 
       {/* 3. Promo Banner / Teaching Guarantees */}
-      <section className="py-24 bg-white border-t border-slate-100/60 relative">
+      <section className="py-16 bg-white border-t border-slate-100/60 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             
             {/* Feature 1 */}
             <div className="flex gap-4 p-6 sm:p-7 bg-slate-50/50 rounded-3xl border border-slate-200/60 hover:border-blue-500/25 transition-all duration-500 shadow-premium hover:shadow-premium-hover group">

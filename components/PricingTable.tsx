@@ -54,25 +54,25 @@ export default function PricingTable() {
   return (
     <div className="w-full bg-white rounded-2xl border border-slate-200/80 shadow-premium hover:shadow-premium-hover transition-all duration-500 overflow-hidden">
       
-      {/* Table Header Wrapper (Custom responsive grid layout for maximum mobile compatibility) */}
+      {/* Table Header Wrapper */}
       <div className="overflow-x-auto">
         <table className="w-full text-left border-collapse">
           <thead>
-            <tr className="bg-slate-950 text-white text-[9px] sm:text-xs font-black uppercase tracking-wider border-b border-slate-800">
-              <th className="py-3 px-4 min-w-[220px] font-display">Khoản mục / Nội dung</th>
-              <th className="py-3 px-4 min-w-[110px] font-display">Giá niêm yết</th>
-              <th className="py-3 px-4 min-w-[130px] font-display">Thời lượng / Ghi chú</th>
-              <th className="py-3 px-4 min-w-[100px] text-center font-display">Hành động</th>
+            <tr className="bg-slate-950 text-white text-[9px] sm:text-[11px] font-black uppercase tracking-wider border-b border-slate-800">
+              <th className="py-3.5 px-5 w-[45%] font-display">Khoản mục / Nội dung</th>
+              <th className="py-3.5 px-4 w-[18%] font-display">Giá niêm yết</th>
+              <th className="py-3.5 px-4 w-[25%] font-display">Thời lượng / Ghi chú</th>
+              <th className="py-3.5 px-4 w-[12%] text-center font-display">Đăng ký</th>
             </tr>
           </thead>
           
           <tbody className="divide-y divide-slate-100 text-xs sm:text-sm">
             
             {/* --- SECTION 1: KHÓA HỌC TIN HỌC VĂN PHÒNG --- */}
-            <tr className="bg-blue-50/20">
-              <td colSpan={4} className="py-2.5 px-4 font-black text-blue-800 text-[10px] sm:text-xs tracking-wider uppercase">
-                <div className="flex items-center gap-1.5 font-display">
-                  <BookOpen size={11} className="text-blue-600" />
+            <tr className="bg-blue-600/[0.06]">
+              <td colSpan={4} className="py-3 px-5 font-black text-blue-700 text-[10px] sm:text-[11px] tracking-widest uppercase border-l-[3px] border-l-blue-500">
+                <div className="flex items-center gap-2 font-display">
+                  <BookOpen size={12} className="text-blue-500" />
                   KHÓA HỌC TIN HỌC VĂN PHÒNG CHUYÊN NGHIỆP
                 </div>
               </td>
@@ -87,14 +87,14 @@ export default function PricingTable() {
                 }`}
               >
                 {/* Title & Badge */}
-                <td className="py-3 px-4">
+                <td className="py-3.5 px-5">
                   <div className="flex flex-wrap items-center gap-2">
-                    <span className="font-black text-slate-850 text-xs sm:text-sm group-hover:text-blue-600 smooth-transition">
+                    <span className="font-black text-slate-900 text-xs sm:text-sm group-hover:text-blue-600 smooth-transition">
                       {course.title}
                     </span>
                     {course.popular && (
                       <span className="inline-flex items-center gap-0.5 px-2 py-0.5 rounded-full text-[8px] font-black text-white bg-gradient-to-r from-blue-600 to-cyan-500 shadow-sm">
-                        <Sparkles size={7} /> Recommended
+                        <Sparkles size={7} /> HOT
                       </span>
                     )}
                   </div>
@@ -102,19 +102,19 @@ export default function PricingTable() {
                 </td>
                 
                 {/* Price */}
-                <td className="py-3 px-4">
+                <td className="py-3.5 px-4">
                   {renderPriceCell(course.price, course.originalPrice)}
                 </td>
                 
                 {/* Duration */}
-                <td className="py-3 px-4">
-                  <span className="text-slate-600 font-bold text-[9px] sm:text-xs bg-slate-100 border border-slate-200/40 px-2 py-1 rounded-md">
+                <td className="py-3.5 px-4">
+                  <span className="text-slate-600 font-bold text-[9px] sm:text-[11px] bg-slate-100 border border-slate-200/40 px-2.5 py-1 rounded-lg">
                     {course.duration}
                   </span>
                 </td>
                 
                 {/* Action Link */}
-                <td className="py-3 px-4 text-center">
+                <td className="py-3.5 px-4 text-center">
                   <Link
                     href={`/lien-he?select=${course.id}`}
                     className={`inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-[9px] font-black tracking-wide uppercase transition-all duration-300 ${
@@ -131,34 +131,34 @@ export default function PricingTable() {
             ))}
 
             {/* --- SECTION 2: DỊCH VỤ CÀI ĐẶT HỆ ĐIỀU HÀNH & PHẦN MỀM --- */}
-            <tr className="bg-slate-50/50">
-              <td colSpan={4} className="py-2.5 px-4 font-black text-slate-800 text-[10px] sm:text-xs tracking-wider uppercase">
-                <div className="flex items-center gap-1.5 font-display">
-                  <Wrench size={11} className="text-blue-500" />
+            <tr className="bg-slate-700/[0.05]">
+              <td colSpan={4} className="py-3 px-5 font-black text-slate-700 text-[10px] sm:text-[11px] tracking-widest uppercase border-l-[3px] border-l-slate-400">
+                <div className="flex items-center gap-2 font-display">
+                  <Wrench size={12} className="text-slate-500" />
                   DỊCH VỤ CÀI ĐẶT HỆ ĐIỀU HÀNH & PHẦN MỀM CHUYÊN NGHIỆP
                 </div>
               </td>
             </tr>
             {servicesData.map((service) => (
-              <tr key={service.id} className="hover:bg-slate-50/40 smooth-transition">
+              <tr key={service.id} className="hover:bg-slate-50/50 smooth-transition group">
                 {/* Name */}
-                <td className="py-3 px-4">
-                  <span className="font-bold text-slate-850 text-xs sm:text-sm group-hover:text-blue-600 smooth-transition">{service.name}</span>
+                <td className="py-3.5 px-5">
+                  <span className="font-bold text-slate-900 text-xs sm:text-sm group-hover:text-blue-600 smooth-transition">{service.name}</span>
                   <p className="text-slate-400 text-[10px] mt-0.5 leading-relaxed line-clamp-1">{service.description}</p>
                 </td>
                 
                 {/* Price */}
-                <td className="py-3 px-4 font-black text-blue-600 text-xs sm:text-sm">
-                  {service.price}
+                <td className="py-3.5 px-4">
+                  <span className="font-black text-blue-600 text-xs sm:text-sm">{service.price}</span>
                 </td>
                 
                 {/* Features (Short notes) */}
-                <td className="py-3 px-4 text-slate-500 text-[10px] sm:text-xs font-semibold">
+                <td className="py-3.5 px-4 text-slate-500 text-[10px] sm:text-[11px] font-semibold leading-relaxed">
                   {service.features[0]}{service.features[1] ? ` & ${service.features[1].toLowerCase()}` : ""}
                 </td>
                 
                 {/* Action Link */}
-                <td className="py-3 px-4 text-center">
+                <td className="py-3.5 px-4 text-center">
                   <Link
                     href={`/lien-he?select=${service.id}`}
                     className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-[9px] font-black tracking-wide uppercase btn-premium-secondary"
