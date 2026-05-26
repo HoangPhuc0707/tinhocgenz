@@ -26,7 +26,7 @@ export default function CoursesPage() {
       {/* 2. Courses Grid Section */}
       <section className="py-24 sm:py-32 bg-[#f8fafc]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {coursesData.map((course, index) => (
               <CourseCard key={course.id} course={course} index={index} />
             ))}

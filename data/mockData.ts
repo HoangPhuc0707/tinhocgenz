@@ -1,12 +1,15 @@
 export interface Course {
   id: string;
   title: string;
-  price: number;
-  originalPrice?: number;
+  tagline: string;
+  price: string | number;
+  originalPrice?: string | number;
   duration: string;
   description: string;
   popular?: boolean;
   features: string[];
+  priceNote?: string;
+  isService?: boolean;
 }
 
 export interface TechService {
@@ -44,64 +47,78 @@ export interface StatItem {
 
 export const coursesData: Course[] = [
   {
-    id: "tin-hoc-co-ban",
-    title: "Tin học văn phòng Cơ bản",
-    price: 1500000,
-    originalPrice: 1800000,
-    duration: "10 buổi (20 giờ)",
-    description: "Làm chủ máy tính, hệ điều hành, soạn thảo văn bản quy chuẩn và xây dựng bảng tính cơ bản. Hoàn hảo cho người mới bắt đầu.",
-    features: [
-      "Quản lý file & Sử dụng Windows tối ưu",
-      "Soạn thảo văn bản quy chuẩn hành chính",
-      "Kỹ năng tạo slide PowerPoint cơ bản",
-      "Sử dụng Excel cơ bản trong quản lý dữ liệu",
-      "Chứng chỉ hoàn thành khóa học & Hỗ trợ 1-1"
-    ]
-  },
-  {
-    id: "excel-nang-cao",
-    title: "Excel Thực Chiến Nâng Cao",
-    price: 2000000,
-    originalPrice: 2500000,
-    duration: "12 buổi (24 giờ)",
-    description: "Bứt phá kỹ năng xử lý dữ liệu lớn, lập báo cáo động, vẽ biểu đồ dashboard chuyên nghiệp và tự động hóa công việc.",
+    id: "mos-2019",
+    title: "Luyện Thi MOS 2019 Điểm Tuyệt Đối",
+    tagline: "Bảo chứng năng lực - Tự tin ghi điểm với mọi nhà tuyển dụng.",
+    price: "1 môn: 1.200.000đ | 3 môn (Gói tối ưu): 2.800.000đ",
+    duration: "3 buổi / 1 môn",
+    description: "Lộ trình ôn thi \"thực chiến\" giúp bạn cầm chắc trong tay chứng chỉ Tin học quốc tế danh giá từ Microsoft, làm đẹp CV và mở ra cơ hội thăng tiến vượt bậc.",
     popular: true,
     features: [
-      "Làm chủ 30+ hàm xử lý chuỗi, ngày, logic nâng cao",
-      "Pivot Table & Pivot Chart nâng cao từ A-Z",
-      "Tự động hóa tác vụ với Power Query cơ bản",
-      "Thiết kế Dashboard báo cáo động chuẩn doanh nghiệp",
-      "Tặng kho templates báo cáo & Support trọn đời"
-    ]
+      "Ôn luyện sát sao trên phần mềm thi thử giống 99% thực tế.",
+      "Bật mí mẹo làm bài và cách tránh bẫy để tối ưu điểm số.",
+      "Tiết kiệm thời gian, ôn đúng trọng tâm - Không học lan man.",
+      "Đặc quyền: Đi nhóm từ 3 người, giảm sốc 10% - 40% học phí!"
+    ],
+    priceNote: "Đi nhóm từ 3 người giảm 10% - 40% học phí"
   },
   {
-    id: "word-powerpoint",
-    title: "Combo Word + PowerPoint GenZ Style",
-    price: 1800000,
-    originalPrice: 2200000,
-    duration: "10 buổi (20 giờ)",
-    description: "Soạn thảo văn bản hành chính thần tốc kết hợp thiết kế slide thuyết trình ấn tượng, cuốn hút người nghe theo phong cách hiện đại.",
+    id: "combo-survival-office",
+    title: "Combo \"Sống Sót\" Chốn Văn Phòng (Word + Excel)",
+    tagline: "Xử lý công việc thần tốc - Nói không với tăng ca.",
+    price: "Cơ bản: 3.500.000đ | Nâng cao: 4.000.000đ",
+    duration: "10 - 12 buổi",
+    description: "Trọn bộ bí kíp từ A-Z giúp bạn soạn thảo hợp đồng, công văn chuyên nghiệp và thao tác bảng tính, báo cáo mượt mà. Phù hợp cho dân hành chính, nhân sự, sales.",
     features: [
-      "Trình bày báo cáo, hợp đồng chuẩn ISO",
-      "Mẹo soạn thảo, trộn thư, phím tắt nhanh 3x",
-      "Tư duy bố cục, màu sắc & typography trong thiết kế",
-      "Kỹ thuật hiệu ứng Morph & Zoom chuyển động mượt mà",
-      "Tặng kho slide premium thiết kế sẵn cực đẹp"
-    ]
+      "Chuẩn hóa kỹ năng soạn thảo văn bản đúng quy định, đẹp mắt.",
+      "Nắm trùm các hàm Excel thông dụng, chấm dứt cảnh tính toán thủ công.",
+      "Bí kíp dùng phím tắt giúp hiệu suất làm việc nhanh gấp 3 lần.",
+      "Tặng kèm kho template biểu mẫu, báo cáo \"dùng là mê\"."
+    ],
+    priceNote: "Đi nhóm 3 người giảm 10-30%"
   },
   {
-    id: "luyen-thi-mos",
-    title: "Luyện Thi Chứng Chỉ MOS (Excel/Word/PPT)",
-    price: 2500000,
-    originalPrice: 3000000,
-    duration: "12 buổi + Luyện đề không giới hạn",
-    description: "Lộ trình ôn thi tinh gọn giúp bạn đạt chứng chỉ Tin học văn phòng quốc tế Microsoft Office Specialist (MOS) điểm tuyệt đối.",
+    id: "ai-office-breakthrough",
+    title: "Ứng Dụng AI: Đột Phá Hiệu Suất Văn Phòng",
+    tagline: "Dẫn đầu xu hướng - Nhân 10 hiệu suất làm việc.",
+    price: "2.200.000đ - 2.500.000đ",
+    duration: "5 buổi",
+    description: "Đừng để công nghệ bỏ lại phía sau! Khóa học giúp bạn biến AI thành \"trợ lý ảo\" đắc lực, tự động hóa mọi tác vụ nhàm chán để tập trung vào tư duy chiến lược.",
     features: [
-      "Học sát theo đề thi thật cập nhật mới nhất",
-      "Phần mềm thi thử bản quyền giống 99% thực tế",
-      "Thầy giáo chữa đề chi tiết từng lỗi sai thường gặp",
-      "Cam kết đỗ 100% - Học lại miễn phí nếu không đạt",
-      "Tối ưu CV, tăng lợi thế cạnh tranh khi xin việc"
+      "Ra lệnh cho AI tự động viết email, soạn thảo kịch bản, báo cáo.",
+      "Thiết kế slide thuyết trình PowerPoint thần tốc, đẹp chuẩn thiết kế.",
+      "Phân tích dữ liệu và tóm tắt tài liệu hàng chục trang trong 1 nốt nhạc.",
+      "Nắm bắt tư duy làm việc thời đại mới, tăng ưu thế cạnh tranh."
+    ],
+    priceNote: "Đi nhóm 3 người giảm 10-30%"
+  },
+  {
+    id: "excel-custom-accounting",
+    title: "Excel \"May Đo\" Riêng Cho Kế Toán",
+    tagline: "Xóa tan nỗi ám ảnh sổ sách, báo cáo.",
+    price: "Chỉ từ 350.000đ - 400.000đ / buổi",
+    duration: "Số buổi tùy chỉnh (Custom) theo mục tiêu",
+    description: "Khóa học được thiết kế 1-1, học và thực hành trực tiếp trên chính chứng từ, dữ liệu sống của công ty bạn. Học đến đâu, áp dụng giải quyết công việc ngay đến đó.",
+    features: [
+      "Giải quyết triệt để các bài toán khó về quản lý kho, công nợ, tính lương.",
+      "Xây dựng hệ thống báo cáo tài chính động (Dashboard) chuyên nghiệp.",
+      "Giảng viên trực tiếp gỡ rối các file Excel bạn đang làm việc.",
+      "Lộ trình linh hoạt, không lãng phí thời gian vào lý thuyết suông."
+    ],
+    priceNote: "Đi nhóm 3 người giảm 10-30%"
+  },
+  {
+    id: "cntt-national-app",
+    title: "Luyện Thi Chứng Chỉ Ứng Dụng CNTT",
+    tagline: "Nền tảng vững chắc - Tấm vé thông hành sự nghiệp.",
+    price: "Cơ bản: 2.500.000đ | Nâng cao: 3.000.000đ",
+    duration: "6 buổi",
+    description: "Bước đệm hoàn hảo để hoàn thiện hồ sơ thi công chức, viên chức, xét tốt nghiệp đại học. Dạy từ mất gốc đến khi tự tin làm chủ máy tính.",
+    features: [
+      "Hệ thống lại kiến thức Tin học một cách bài bản, dễ hiểu nhất.",
+      "Luyện kỹ năng thực hành phản xạ nhanh, bám sát cấu trúc đề thi.",
+      "Trang bị mẹo xử lý tình huống thực tế phòng thi để đạt điểm cao.",
+      "Cam kết nắm vững kỹ năng quản lý máy tính và làm việc văn phòng."
     ]
   }
 ];
@@ -118,26 +135,52 @@ export const servicesData: TechService[] = [
   {
     id: "cai-office",
     name: "Cài Đặt Microsoft Office",
-    price: "100.000đ",
-    priceValue: 100000,
+    price: "150.000đ",
+    priceValue: 150000,
     description: "Cài đặt các phiên bản Office 2019/2021/365 kích hoạt đầy đủ tính năng, ổn định, không lỗi font.",
     features: ["Bao gồm Word, Excel, PowerPoint, Outlook", "Cài đặt bộ font tiếng Việt đầy đủ nhất", "Hỗ trợ trọn đời, không lo bị khóa", "Cài đặt nhanh qua Ultraview/Teamview"]
   },
   {
-    id: "cai-do-hoa",
-    name: "Cài Đặt Phần Mềm Đồ Họa",
-    price: "từ 80.000đ",
-    priceValue: 80000,
-    description: "Cài đặt trọn bộ phần mềm đồ họa, thiết kế chuyên nghiệp như Photoshop, Illustrator, AutoCAD, Premiere, Lightroom...",
-    features: ["Kích hoạt vĩnh viễn, đầy đủ tính năng", "Hỗ trợ cài đặt từ xa qua UltraView", "Tương thích tốt, chạy mượt mà ổn định", "Đa dạng phiên bản theo cấu hình máy"]
+    id: "sua-may-tinh",
+    name: "Sửa Chữa Máy Tính / Laptop",
+    price: "từ 200.000đ",
+    priceValue: 200000,
+    description: "Khắc phục triệt để các lỗi phần cứng, phần mềm, máy chạy chậm, đơ lag, nhiễm virus, lỗi màn hình xanh.",
+    features: ["Kiểm tra báo lỗi chính xác tại chỗ", "Thay thế linh kiện chính hãng (SSD, RAM, Pin)", "Bảo hành uy tín từ 3 - 12 tháng", "Hỗ trợ tận nhà hoặc lấy ngay trong ngày"]
   },
   {
-    id: "cai-theo-yeu-cau",
-    name: "Cài Phần Mềm Theo Yêu Cầu",
-    price: "từ 50.000đ",
-    priceValue: 50000,
-    description: "Cài đặt các phần mềm học tập, làm việc chuyên ngành khác theo yêu cầu như SPSS, Matlab, Solidworks, các công cụ lập trình...",
-    features: ["Cài đặt và cấu hình hoàn chỉnh", "Hỗ trợ kiểm tra lỗi trước khi dùng", "UltraView nhanh gọn, không cần ra tiệm", "Tư vấn phần mềm tối ưu cho cấu hình"]
+    id: "ve-sinh-laptop",
+    name: "Vệ Sinh Máy Tính / Laptop",
+    price: "100.000đ",
+    priceValue: 100000,
+    description: "Vệ sinh bụi bẩn bên trong, thay keo tản nhiệt MX-4/MX-6 xịn giúp hạ nhiệt độ CPU, bảo vệ máy khỏi hư hại.",
+    features: ["Vệ sinh sạch sẽ cánh quạt, khe tản nhiệt", "Tra keo tản nhiệt cao cấp nhập khẩu", "Lau sạch bụi bẩn bàn phím, màn hình", "Giúp máy giảm 10-15°C ngay sau khi vệ sinh"]
+  },
+  {
+    id: "danh-van-ban",
+    name: "Dịch Vụ Đánh Văn Bản & Soạn Thảo Theo Yêu Cầu",
+    price: "Báo giá theo số trang / khối lượng",
+    priceValue: 0,
+    description: "Chuyển tài liệu, file ảnh, PDF hoặc file ghi âm thành văn bản Word chỉn chu đúng chuẩn văn bản hành chính siêu tốc.",
+    features: [
+      "Nhận chuyển đổi từ file ảnh, PDF, bản viết tay, ghi âm...",
+      "Căn chỉnh lề, định dạng font, tạo mục lục tự động chuẩn hành chính",
+      "Đáp ứng tốt các đơn hàng số lượng lớn hoặc cần gấp trong ngày",
+      "Cam kết bảo mật dữ liệu tuyệt đối của khách hàng"
+    ]
+  },
+  {
+    id: "thiet-ke-excel",
+    name: "Dịch Vụ Thiết Kế File Excel Theo Yêu Cầu (Custom)",
+    price: "Coaching hoặc thiết kế riêng từ 350.000đ",
+    priceValue: 350000,
+    description: "Số hóa quy trình quản lý với hệ thống file Excel thiết kế riêng giúp tiết kiệm 80% thời gian làm báo cáo doanh nghiệp.",
+    features: [
+      "Tự động hóa 100%, thiết lập công thức thông minh liên kết dữ liệu",
+      "Xây dựng báo cáo động Dashboard trực quan dễ dàng theo dõi",
+      "Tối ưu hóa file nặng, sửa toàn bộ lỗi hàm giúp chạy mượt mà",
+      "Bàn giao kèm hướng dẫn chi tiết, bảo hành dài hạn"
+    ]
   }
 ];
 
@@ -154,7 +197,7 @@ export const testimonialsData: Testimonial[] = [
   {
     id: "testi-2",
     name: "Trần Hoàng Nam",
-    role: "Sinh viên Đại học Kinh tế Quốc dân",
+    role: "Sinh viên Đại học Văn Lang",
     courseOrService: "Học viên Luyện thi MOS Excel",
     avatarUrl: "/avatars/avatar-2.png",
     content: "Phương pháp dạy rất GenZ, tràn đầy năng lượng, không bị nhàm chán như đi học ở các trung tâm truyền thống. Mình đã ôn thi rất tự tin và đạt chứng chỉ MOS Excel với số điểm 980/1000 ngay từ lần thi đầu tiên!",
@@ -163,10 +206,10 @@ export const testimonialsData: Testimonial[] = [
   {
     id: "testi-3",
     name: "Phạm Thu Thủy",
-    role: "Kế toán viên tự do",
-    courseOrService: "Khách hàng Cài Win & Phần mềm đồ họa",
+    role: "Kế toán viên",
+    courseOrService: "Khách hàng Vệ sinh laptop & Cài Win",
     avatarUrl: "/avatars/avatar-3.png",
-    content: "Dịch vụ nhanh gọn, uy tín, thầy giáo hỗ trợ rất nhiệt tình. Máy tính của mình bị chậm đơ suốt 2 tháng nay, sau khi được cài lại Windows và cài đặt thêm trọn bộ phần mềm đồ họa thiết kế thì máy chạy cực nhanh, mượt mà!",
+    content: "Dịch vụ nhanh gọn, uy tín, thầy giáo hỗ trợ rất nhiệt tình. Máy tính của mình bị chậm đơ suốt 2 tháng nay, sau khi được cài lại Windows và vệ sinh tra keo tản nhiệt thì chạy nhanh như máy mới mua!",
     rating: 5
   },
   {

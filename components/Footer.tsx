@@ -52,22 +52,22 @@ export default function Footer() {
             <ul className="space-y-3.5 text-sm">
               <li>
                 <Link href="/khoa-hoc" className="hover:text-blue-400 smooth-transition text-slate-400 hover:translate-x-1 inline-block">
-                  Tin học văn phòng cơ bản
+                  Tin học văn phòng Toàn diện 4.0
                 </Link>
               </li>
               <li>
                 <Link href="/khoa-hoc" className="hover:text-blue-400 smooth-transition text-slate-400 hover:translate-x-1 inline-block">
-                  Excel thực chiến nâng cao
+                  Excel Master Pro thực chiến
                 </Link>
               </li>
               <li>
                 <Link href="/khoa-hoc" className="hover:text-blue-400 smooth-transition text-slate-400 hover:translate-x-1 inline-block">
-                  Combo Word & PowerPoint
+                  Combo Word & PowerPoint GenZ
                 </Link>
               </li>
               <li>
                 <Link href="/khoa-hoc" className="hover:text-blue-400 smooth-transition text-slate-400 hover:translate-x-1 inline-block">
-                  Luyện thi chứng chỉ MOS
+                  Luyện thi chứng chỉ MOS quốc tế
                 </Link>
               </li>
             </ul>
