@@ -40,6 +40,7 @@ function ContactFormContent() {
   const [errors, setErrors] = useState<{ name?: string; phone?: string }>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   // Pre-fill selection based on search parameters
   useEffect(() => {
@@ -61,12 +62,15 @@ function ContactFormContent() {
     if (errors[name as keyof typeof errors]) {
       setErrors(prev => ({ ...prev, [name]: undefined }));
     }
+    // Clear global submit error when typing
+    setSubmitError(null);
   };
 
   // Submit Handler
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const newErrors: typeof errors = {};
+    setSubmitError(null);
 
     // Name Validation
     if (!formData.name.trim()) {
@@ -86,18 +90,36 @@ function ContactFormContent() {
       return;
     }
 
-    // Submit Simulation
+    // Submit request to Next.js API route
     setIsSubmitting(true);
-    setTimeout(() => {
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+      if (response.ok && result.status === "success") {
+        setSubmitSuccess(true);
+      } else {
+        setSubmitError(result.message || "Có lỗi xảy ra khi gửi thông tin đăng ký. Vui lòng liên hệ trực tiếp.");
+      }
+    } catch (err) {
+      console.error("Submit error:", err);
+      setSubmitError("Lỗi kết nối mạng. Vui lòng kiểm tra lại đường truyền internet của bạn.");
+    } finally {
       setIsSubmitting(false);
-      setSubmitSuccess(true);
-    }, 1500);
+    }
   };
 
   // Reset form to submit again
   const handleReset = () => {
     setFormData({ name: "", phone: "", selection: "", message: "" });
     setSubmitSuccess(false);
+    setSubmitError(null);
   };
 
   if (submitSuccess) {
@@ -143,7 +165,7 @@ function ContactFormContent() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="bg-white p-6 sm:p-10 rounded-2xl border border-slate-200 shadow-2xl relative overflow-hidden"
+      className="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200/80 shadow-premium hover:shadow-premium-hover transition-all duration-500 relative overflow-hidden"
     >
       {/* Visual Accent Bar */}
       <div className="absolute top-0 left-0 w-full h-[4px] bg-gradient-to-r from-blue-600 to-cyan-500" />
@@ -154,6 +176,13 @@ function ContactFormContent() {
       <p className="text-slate-500 text-xs sm:text-sm mb-6 leading-relaxed">
         Để lại thông tin, Thầy giáo GenZ sẽ chủ động gọi điện để tư vấn lộ trình học tập tối ưu hoặc lên lịch cài đặt dịch vụ giúp bạn ngay!
       </p>
+
+      {submitError && (
+        <div className="mb-6 p-4 rounded-2xl bg-red-50 border border-red-100 text-red-700 text-xs sm:text-sm font-semibold flex items-center gap-2.5 animate-fade-in shadow-sm">
+          <AlertCircle size={16} className="shrink-0" />
+          <span>{submitError}</span>
+        </div>
+      )}
 
       <div className="space-y-4">
         {/* Name input */}
@@ -260,17 +289,17 @@ function ContactFormContent() {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="w-full mt-6 py-4 rounded-xl text-sm font-bold text-white bg-blue-600 hover:bg-blue-700 disabled:bg-blue-400 shadow-lg shadow-blue-500/10 hover:shadow-blue-500/25 smooth-transition flex items-center justify-center gap-2 group hover:-translate-y-0.5 disabled:translate-y-0 cursor-pointer"
+        className="w-full mt-6 py-4 rounded-full text-xs font-black tracking-wide uppercase transition-all duration-300 active:scale-[0.98] disabled:scale-100 disabled:opacity-85 btn-premium-primary flex items-center justify-center gap-2 group cursor-pointer"
       >
         {isSubmitting ? (
           <>
-            <Loader2 className="animate-spin" size={16} />
+            <Loader2 className="animate-spin" size={15} />
             Đang ghi nhận...
           </>
         ) : (
           <>
             Đăng ký ngay
-            <ArrowRight size={16} className="group-hover:translate-x-1 smooth-transition" />
+            <ArrowRight size={15} className="group-hover:translate-x-0.5 transition-transform duration-300" />
           </>
         )}
       </button>
